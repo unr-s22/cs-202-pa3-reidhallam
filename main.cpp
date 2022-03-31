@@ -6,12 +6,9 @@ using namespace std;
 
 int main(){
 	
-	Money m1, newBalance;
-	Money m2 = Money(200, 10);
+	Money m1;
 	Account acc(m1);
-	newBalance = acc.makeDeposit(m2);
-	cout << "$" << newBalance.dollars << ".";
-	cout << newBalance.cents << endl;
+	cout << acc;
 	return 0;
 }
 

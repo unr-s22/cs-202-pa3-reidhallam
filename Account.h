@@ -7,23 +7,20 @@ using namespace std;
 class Account{
 	public:
 	Money initial;
+	Money dBalance = Money(0, 0);
+	Money wBalance = Money(0, 0);
+	Money balance = Money(0, 0);
+	vector<Money> deposits;
+	vector<Money> withdrawals;
 
 	Account(Money aInitial){
 		aInitial = Money(300, 23);
 		initial = aInitial;
 	};
 
-	Money makeDeposit(Money dinero);/*{
-		bool update;
-		Money newBalance;
-		vector<Money> deposits;
-		if(dinero.dollars == 0 && dinero.cents == 0){
-			update = false;}
-		else{
-			update = true;
-			deposits.push_back(dinero);}
-		if(update == true){
-			newBalance = initial + dinero;}
-	};*/
+	void makeDeposit(Money dinero);
 	void makeWithdrawals(Money skrilla);
+	Money getBalance();
 };
+
+ostream& operator<<(ostream& out, Account& acc);
